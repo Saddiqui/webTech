@@ -93,3 +93,15 @@ p {
   font-family: verdana;
   font-size: 20px;
 }
+footer {
+   position: fixed;
+   bottom: 0;
+   width: 100%;
+   color: rgb(139, 136, 136);
+   text-align: center;
+}
+img {
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  width: 150px;
+}
