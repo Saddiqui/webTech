@@ -110,4 +110,14 @@ p {
     width: 100%;
     height: auto;
   }
+footer {
+   bottom: 0;
+   width: 100%;
+   color: rgb(139, 136, 136);
+   text-align: center;
+}
+img {
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  width: 150px;
 }
