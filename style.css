@@ -1,10 +1,22 @@
 body {
 margin: 0;
 }
+header {
+  background-color: #f1f1f1;
+  padding: 10px;
+  text-align: center;
+  font-size: 12px;
+}
+article {
+  float: left;
+  padding: 20px;
+  width: 70%;
+  background-color: #f1f1f1;
+}
 
 h1 {
-  color: rgb(0, 0, 0);
-  text-align: center;
+  color:  rgb(189, 105, 105);
+
 }
 h2 {
   color: rgb(0, 0, 0);
@@ -12,7 +24,6 @@ h2 {
 }
 h4 {
   color: rgb(0, 0, 0);
-  text-align: center;
 }
 li {
   float:left;
@@ -36,10 +47,6 @@ ul.topnav li a {
 }
 ul.topnav li.right {
   float: right;
-}
-@media screen and (max-width: 600px) {
-  ul.topnav li.right, 
-  ul.topnav li {float: none;}
 }
 
 table {
@@ -92,4 +99,15 @@ table th {
 p {
   font-family: verdana;
   font-size: 20px;
+}
+
+@media screen and (max-width: 600px) {
+  ul.topnav li.right, 
+  ul.topnav li {float: none;}
+}
+@media (max-width: 600px) {
+  nav, article {
+    width: 100%;
+    height: auto;
+  }
 }
