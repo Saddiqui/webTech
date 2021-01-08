@@ -1,11 +1,12 @@
 body {
 margin: 0;
+font-family: Arial, Helvetica, sans-serif
 }
 header {
-  background-color: #f1f1f1;
-  padding: 10px;
+  padding: 80px;
   text-align: center;
-  font-size: 12px;
+  background: #1abc9c;
+  color: white;
 }
 article {
   float: left;
@@ -14,39 +15,41 @@ article {
   background-color: #f1f1f1;
 }
 
-h1 {
-  color:  rgb(189, 105, 105);
+header.h1 {
+font-size:20px;
 
 }
-h2 {
-  color: rgb(0, 0, 0);
-  text-align: center;
+header.h2 {
+  font-size:10px
 }
 h4 {
   color: rgb(0, 0, 0);
 }
-li {
-  float:left;
-}
-ul.topnav {
-  list-style-type: none;
-  margin: 0;
-  padding: 0;
+/* Style the top navigation bar */
+.navbar {
   overflow: hidden;
-  background-color: white
+  background-color: #333;
 }
-ul.topnav{
-  float:left;
-}
-ul.topnav li a {
+
+/* Style the navigation bar links */
+.navbar a {
+  float: left;
   display: block;
-  color:  rgb(189, 105, 105);
+  color: white;
   text-align: center;
-  padding: 14px 16px;
+  padding: 14px 20px;
   text-decoration: none;
 }
-ul.topnav li.right {
+
+/* Right-aligned link */
+.navbar a.right {
   float: right;
+}
+
+/* Change color on hover */
+.navbar a:hover {
+  background-color: #ddd;
+  color: black;
 }
 
 table {
@@ -101,23 +104,28 @@ p {
   font-size: 20px;
 }
 
-@media screen and (max-width: 600px) {
-  ul.topnav li.right, 
-  ul.topnav li {float: none;}
-}
-@media (max-width: 600px) {
-  nav, article {
-    width: 100%;
-    height: auto;
+/* Responsive layout - when the screen is less than 700px wide, make the two columns stack on top of each other instead of next to each other */
+@media screen and (max-width: 700px) {
+  .row {   
+    flex-direction: column;
   }
+}
+
+/* Responsive layout - when the screen is less than 400px wide, make the navigation links stack on top of each other instead of next to each other */
+@media screen and (max-width: 400px) {
+  .navbar a {
+    float: none;
+    width: 100%;
+  }
+}
 footer {
-   bottom: 0;
-   width: 100%;
-   color: rgb(139, 136, 136);
-   text-align: center;
+  bottom: 0;
+  width: 100%;
+  color: rgb(139, 136, 136);
+  text-align: center;
 }
 img {
-  border: 1px solid #ddd;
-  border-radius: 4px;
-  width: 150px;
+ border: 1px solid #ddd;
+ border-radius: 4px;
+ width: 75px;
 }
