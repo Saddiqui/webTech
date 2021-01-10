@@ -12,7 +12,7 @@
             <header>
                <h1>Assignment 1: homepage of a webshop</h1>
                 <h2>Orders placed before 22:00, will be delivered the next day</h2>
-            </header>
+                </header>
             <section>
                 <nav>
                     <div class="navbar">
@@ -28,7 +28,10 @@
                     </div>
                 </nav>
             </section>
-                <br><br>
+            <a href="#alink" id="alink" class="alink">active link</a>
+            <a href="#unlink" id="unlink" class="unlink">unvisited link</a>
+            <a href="#vislink" id="vislink" class="vislink">visited link</a>
+            <br><br>
     <form action="/subscribersList.php">
         <strong>Subscribe here for weekly deals!</strong><br>
         <label for="name"><em>Name:</em></label><br>
@@ -56,7 +59,8 @@
                 </dl>
                 </section>
         <section>
-            <table>
+            <table id="bestsellers"> 
+                <caption>Our best selling products in details:</caption>
                 <tr>
                     <th>Product</th>
                     <th>Image</th>
@@ -80,7 +84,7 @@
                     </ol></td>
                     <td>Zwisterland</td>
                     <td>
-                        <ul>
+                        <ul class = allergy>
                             <li>Nuts</li>
                             <li>Cacao</li>
                             <li>Dairy</li>
@@ -104,7 +108,7 @@
                     </td>
                     <td>Italy</td>
                     <td>
-                        <ul>
+                        <ul class = allergy>
                             <li>gluten</li>
                             <li>Wheat</li>
                         </ul>
@@ -127,7 +131,7 @@
                     </ol></td>
                     <td>Japan</td>
                     <td>
-                        <ul>
+                        <ul class="allergy">
                             <li>seafood</li>
                             <li>Seaweed</li>
                             <li>gluten</li>
@@ -136,8 +140,27 @@
                 </tr>
             </table>
         </section><br><br>
-<section>
-    <figure><table>
+        <p class= "firstpar">Lorem ipsum dolor sit amet, consectetur adipiscing elit.<br>
+         Venit ad extremum; Oratio me istius philosophi non offendit;<br>
+        Res enim concurrent contrariae. Duo Reges: constructio interrete.<br>
+        Solum praeterea formosum, solum liberum, solum civem,
+        stultost; Comprehensum, quod cognitum non habet?
+        </p>
+        <article><h5>second paragraph</h5></article>
+        <p class = "secondpar">Igitur neque stultorum quisquam beatus neque sapientium non beatus. <br>
+        Quis est tam dissimile homini. Equidem e Cn. Nam quid possumus facere melius?</p><br>
+        </article>
+        <ul class="secondli">
+            this list shows style image:
+            <li>Lorem ipsum</li>
+            <li>Lorem ipsum</li>
+        </ul>
+        <ul class="thirdli">
+            this list shows style:
+            <li>Lorem ipsum</li>
+            <li>Lorem ipsum</li>
+        </ul>
+<figure><table>
         <tr>
             <th>Lorem Ipsum</th>
             <th>Lorem Ipsum</th>
@@ -158,8 +181,7 @@
         </tr>
         
     </table><figcaption>table for assignment2</figcaption>
-    </figure>
+</figure>
 
-</section>
-    <footer><pre>Assignment1| Group 47 | Alina saddiqui | Emily Zwueste | Web Technology | X_400488</pre></footer>
+<footer><pre>Assignment1| Group 47 | Alina saddiqui | Emily Zwueste | Web Technology | X_400488</pre></footer>
 </html>
