@@ -1,9 +1,10 @@
 body {
 margin: 0;
-font-family: Arial, Helvetica, sans-serif
+font-family: Arial, Helvetica, sans-serif;
 }
 
 h1 {
+  page-break-before: always;
   color: white
 }
 header {
@@ -26,7 +27,7 @@ header {
   display: inline-block;
   overflow: hidden;
   text-align: center;
-  background: white;
+  background-image: url("background.jpg");
   padding: 30px;
   width: 500px;
 }
@@ -59,6 +60,19 @@ header.h2 {
 h4 {
   color: rgb(0, 0, 0);
 }
+
+a.alink:active{
+  background-color:rgba(243, 184, 184, 0.527) ;
+}
+a.unlink:link{
+  color:rgb(0, 0, 0);
+}
+a.vislink{
+color:rosybrown;
+}
+a.foclink{
+
+}
 /* Style the top navigation bar */
 .navbar {
   overflow: hidden;
@@ -88,26 +102,27 @@ h4 {
 
 table {
   font-family: Arial, Helvetica, sans-serif;
+  font-style: initial;
   border-collapse: collapse;
+  border-style: solid;
+  border-width: medium;
   width: 50%;
-  border: 1px solid #ddd;
+  border: 1px solid rgb(196, 191, 191);
   padding: 8px;
   padding-top: 12px;
   padding-bottom: 12px;
   text-align: left;
   color: rgb(0, 0, 0);
-}
-table{margin-left: auto;
+  margin-left: auto;
   margin-right: auto;}
 
 table tr:hover {
   background-color: rgba(243, 184, 184, 0.527);}
 
 table tr {
-  font-family: Arial, Helvetica, sans-serif;
   border-collapse: collapse;
-  width: 50%;
   border: 1px solid #ddd;
+  border-spacing: initial;
   padding: 8px;
   padding-top: 12px;
   padding-bottom: 12px;
@@ -115,10 +130,9 @@ table tr {
   color: rgb(0, 0, 0);
 }
 table td{
-  font-family: Arial, Helvetica, sans-serif;
   border-collapse: collapse;
-  width: 50%;
   border: 1px solid #ddd;
+  border-spacing: initial;
   padding: 8px;
   padding-top: 12px;
   padding-bottom: 12px;
@@ -126,10 +140,11 @@ table td{
   color: rgb(0, 0, 0);
 }
 table th {
- font-family: Arial, Helvetica, sans-serif;
   border-collapse: collapse;
-  width: 50%;
-  border: 1px solid #ddd;
+  border: 1px;
+  border-style: solid;
+  border-color: #ddd;
+  border-spacing: initial;
   padding: 8px;
   padding-top: 12px;
   padding-bottom: 12px;
@@ -137,10 +152,23 @@ table th {
   color: white;
   background-color: #f18071;
   color:white;
+
 }
-p {
-  font-family: verdana;
-  font-size: 20px;
+p.firstpar {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 15px;
+  font-weight: normal;
+  font-style:initial;
+  text-transform:capitalize;
+  text-align: center;
+  widows: 5;
+  }
+p.secondpar{
+  font:caption Arial;
+  font-size: 15px;
+  font-weight: normal;
+  text-align:center;
+  font-variant: small-caps;
 }
 
 /* Responsive layout - when the screen is less than 700px wide, make the two columns stack on top of each other instead of next to each other */
@@ -158,10 +186,14 @@ p {
   }
 }
 footer {
+  page-break-after: always;
   bottom: 0;
   width: 100%;
   color: rgb(139, 136, 136);
   text-align: center;
+  background-color:lavenderblush;
+  background-repeat: repeat-x;
+  orphans: 1;
 }
 img {
   border: 1px solid #ddd;
@@ -169,3 +201,35 @@ img {
   width: 75px;
 }
 
+form{
+  margin-top: 0px;
+  text-indent:30px;
+  }
+ul.allergy{
+  list-style-type: square;
+  list-style-position: outside;
+  }
+ul.secondli{
+  text-align:center;
+  list-style-position: inside;
+  list-style-image:url("bullet.png");
+  vertical-align: text-bottom;
+  }
+ul.thirdli{
+  text-align: center;
+  list-style: lower-roman inside;
+}
+ol.li{
+  list-style-position: outside;
+}
+#bestsellers{
+  caption-side:top;
+  font-weight: bold;
+}
+
+input{
+  background-color:#da716348;
+}
+article{
+  text-align: center;
+}
