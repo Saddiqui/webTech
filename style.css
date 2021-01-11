@@ -1,6 +1,7 @@
 body {
 margin: 0;
 font-family: Arial, Helvetica, sans-serif;
+background-image: url("https://i.pinimg.com/originals/8f/4e/8a/8f4e8a77b57c243fa020207909ef377a.png");
 }
 
 h1 {
@@ -19,6 +20,7 @@ header {
   background-color: white;
   padding: 20px;
   text-align: center;
+  background-image: url("https://i.pinimg.com/originals/8f/4e/8a/8f4e8a77b57c243fa020207909ef377a.png");
 }
 .data_table h1{
   color:black;
@@ -27,7 +29,7 @@ header {
   display: inline-block;
   overflow: hidden;
   text-align: center;
-  background-image: url("background.jpg");
+  background-image: url("https://i.pinimg.com/originals/8f/4e/8a/8f4e8a77b57c243fa020207909ef377a.png");
   padding: 30px;
   width: 500px;
 }
@@ -70,13 +72,11 @@ a.unlink:link{
 a.vislink{
 color:rosybrown;
 }
-a.foclink{
-
-}
 /* Style the top navigation bar */
 .navbar {
   overflow: hidden;
   background-color: white;
+  background-image: url("https://i.pinimg.com/originals/8f/4e/8a/8f4e8a77b57c243fa020207909ef377a.png");
 }
 
 /* Style the navigation bar links */
@@ -212,8 +212,8 @@ ul.allergy{
 ul.secondli{
   text-align:center;
   list-style-position: inside;
-  list-style-image:url("bullet.png");
-  vertical-align: text-bottom;
+  list-style-image:url("https://i0.wp.com/guitarandlace.com/wp-content/uploads/2020/09/10-8.png?ssl=1&resize=10%2C10");
+  vertical-align:baseline;
   }
 ul.thirdli{
   text-align: center;
@@ -227,8 +227,8 @@ ol.li{
   font-weight: bold;
 }
 
-input{
-  background-color:#da716348;
+input:focus{
+  background-color:#da716325;
 }
 article{
   text-align: center;
