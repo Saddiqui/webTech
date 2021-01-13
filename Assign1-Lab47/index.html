@@ -6,14 +6,6 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
             <title>Assignment 1: homepage of a webshop</title>
                 <link rel="stylesheet" href="style.css">
-                <script
-                    src="https://code.jquery.com/jquery-3.5.1.js"
-                    integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc="
-                    crossorigin="anonymous">
-                </script>
-                <script type="text/javascript" src="index.js"></script>
-
-
     </head>
 
         <body>
@@ -40,21 +32,18 @@
             <a href="#unlink" id="unlink" class="unlink">unvisited link</a>
             <a href="#vislink" id="vislink" class="vislink">visited link</a>
             <br><br>
-    <form id="login" action="https://wt.ops.labs.vu.nl/api21/807c5ce9" method="POST">
-        <strong>Add new products here!</strong><br>
-        <label for="Product"><em>Product:</em></label><br>
-        <input type="text" id="product" name="product" required><br>
-            <label for="origin"><em>Origin:</em></label><br>
-            <input type="text" id="origin" name="origin" required><br>
-                <label for="best_before_date"><em>Best before date:</em></label><br>
-                <input type="text" id="best_before_date" name="best_before_date" required><br>
-                    <label for="amount"><em>Amount:</em></label><br>
-                    <input type="text" id="amount" name="amount" required><br>
-                        <label for="image"><em>Image:</em></label><br>
-                        <input type="text" id="image" name="image"><br>
-                        <input type="submit" value="Submit">
-    
-</form>
+    <form action="/subscribersList.php">
+        <strong>Subscribe here for weekly deals!</strong><br>
+        <label for="name"><em>Name:</em></label><br>
+        <input type="text" id="name" name="name" value="name"><br>
+        <label for="email"><em>Email:</em></label><br>
+        <input type="text" id="email" name="email" value="email@email.com" required><br>
+         <em>Would you like to receive coupons?</em>
+        <input type="radio" id="yes" name="yes" value="yes">
+        <label for="yes"><em>Yes</em></label>
+        <input type="radio" id="no" name="no" value="no">
+        <label for="no"><em>No</em></label><br>
+        <input type="submit" value="Submit">
     </form>
             <section class="main">
                 <dl class="data_table">
@@ -73,12 +62,12 @@
             <table id="bestsellers"> 
                 <caption>Our best selling products in details:</caption>
                 <tr>
-                    <th class="sort"onclick="sortTable(0)">Product</th>
+                    <th>Product</th>
                     <th>Image</th>
                     <th>Best Before </th>
                     <th>Amount</th>
                     <th>Type</th>
-                    <th class ="sort" onclick="sortTable(1)">Origin</th>
+                    <th>Origin</th>
                     <th><dfn><abbr title="Allergy info">May contain</abbr>
                         </dfn></th>
                 </tr>
@@ -195,5 +184,4 @@
 </figure>
 
 <footer><pre>Assignment1| Group 47 | Alina saddiqui | Emily Zwueste | Web Technology | X_400488</pre></footer>
-      
 </html>
