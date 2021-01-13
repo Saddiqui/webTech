@@ -32,21 +32,18 @@
             <a href="#unlink" id="unlink" class="unlink">unvisited link</a>
             <a href="#vislink" id="vislink" class="vislink">visited link</a>
             <br><br>
-    <form id="login" action="https://wt.ops.labs.vu.nl/api21/807c5ce9" method="POST">
-        <strong>Add new products here!</strong><br>
-        <label for="Product"><em>Product:</em></label><br>
-        <input type="text" id="product" name="product" required><br>
-            <label for="origin"><em>Origin:</em></label><br>
-            <input type="text" id="origin" name="origin" required><br>
-                <label for="best_before_date"><em>Best before date:</em></label><br>
-                <input type="text" id="best_before_date" name="best_before_date" required><br>
-                    <label for="amount"><em>Amount:</em></label><br>
-                    <input type="text" id="amount" name="amount" required><br>
-                        <label for="image"><em>Image:</em></label><br>
-                        <input type="text" id="image" name="image"><br>
-                        <input type="submit" value="Submit">
-    
-</form>
+    <form action="/subscribersList.php">
+        <strong>Subscribe here for weekly deals!</strong><br>
+        <label for="name"><em>Name:</em></label><br>
+        <input type="text" id="name" name="name" value="name"><br>
+        <label for="email"><em>Email:</em></label><br>
+        <input type="text" id="email" name="email" value="email@email.com" required><br>
+         <em>Would you like to receive coupons?</em>
+        <input type="radio" id="yes" name="yes" value="yes">
+        <label for="yes"><em>Yes</em></label>
+        <input type="radio" id="no" name="no" value="no">
+        <label for="no"><em>No</em></label><br>
+        <input type="submit" value="Submit">
     </form>
             <section class="main">
                 <dl class="data_table">
