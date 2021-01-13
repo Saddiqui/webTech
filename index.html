@@ -6,6 +6,14 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
             <title>Assignment 1: homepage of a webshop</title>
                 <link rel="stylesheet" href="style.css">
+                <script
+                    src="https://code.jquery.com/jquery-3.5.1.js"
+                    integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc="
+                    crossorigin="anonymous">
+                </script>
+                <script type="text/javascript" src="index.js"></script>
+
+
     </head>
 
         <body>
@@ -65,12 +73,12 @@
             <table id="bestsellers"> 
                 <caption>Our best selling products in details:</caption>
                 <tr>
-                    <th>Product</th>
+                    <th class="sort"onclick="sortTable(0)">Product</th>
                     <th>Image</th>
                     <th>Best Before </th>
                     <th>Amount</th>
                     <th>Type</th>
-                    <th>Origin</th>
+                    <th class ="sort" onclick="sortTable(1)">Origin</th>
                     <th><dfn><abbr title="Allergy info">May contain</abbr>
                         </dfn></th>
                 </tr>
@@ -187,4 +195,5 @@
 </figure>
 
 <footer><pre>Assignment1| Group 47 | Alina saddiqui | Emily Zwueste | Web Technology | X_400488</pre></footer>
+      
 </html>
