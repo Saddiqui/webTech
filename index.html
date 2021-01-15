@@ -53,7 +53,6 @@
                     <input type="text" id="amount" name="amount" required><br>
                         <label for="image"><em>Image:</em></label><br>
                         <input type="text" id="image" name="image"><br>
-                        <label for="type"><em>Type:</em></label><br>
                         <input type="text" id="type" name="type"><br>
                         <input type="submit" value="Submit">
                         <button>Reset button</button>
@@ -77,127 +76,49 @@
         <section>
             <table id="bestsellers"> 
                 <caption>Our best selling products in details:</caption>
+                <input type = "text" id="product" placeholder="product">
+                <input type = "text" id="image" placeholder="image">
+                <input type = "text" id="bestbefore" placeholder="best before">
+                <input type = "text" id="amount" placeholder="amount">
+                <input type = "text" id="origin" placeholder="origin">
+                <input type="button" class="add-row" value="Add Row">
                 <tr>
+                    <th>Select</th>
                     <th class="sort"onclick="sortTable(0)">Product</th>
                     <th>Image</th>
                     <th>Best Before </th>
                     <th>Amount</th>
-                    <th>Type</th>
                     <th class ="sort" onclick="sortTable(1)">Origin</th>
-                    <th><dfn><abbr title="Allergy info">May contain</abbr>
-                        </dfn></th>
                 </tr>
                 <tr>
+                    <td><input type="checkbox" name="record"></td>
                     <td>Chocolate </td>
                     <td><img src="https://upload.wikimedia.org/wikipedia/commons/7/70/Chocolate_%28blue_background%29.jpg" alt="Chocolate"></td>
                     <td>01.06.2021</td>
                     <td>100 gram</td>
-                    <td><ol>
-                        <li>Milk</li>
-                        <li>Pure</li>
-                        <li>White</li>
-                        <li>Hazelnut</li>
-                    </ol></td>
                     <td>Zwisterland</td>
-                    <td>
-                        <ul class = allergy>
-                            <li>Nuts</li>
-                            <li>Cacao</li>
-                            <li>Dairy</li>
-                        </ul>
-                    </td>
                     
                 </tr>
                 <tr>
+                    <td><input type="checkbox" name="record"></td>
                     <td>Pasta</td>
                     <td><img src="https://upload.wikimedia.org/wikipedia/commons/1/1c/Pasta2.jpg" alt="Pasta"></td>
                     <td>01.06.2021</td>
                     <td>1 kg</td>
-                    <td>
-                        <ol>
-                            <li>Rotini</li>
-                            <li>Fusilli</li>
-                            <li>Penne</li>
-                            <li>Farfalle</li>
-                            <li>Shell</li>
-                        </ol>
-                    </td>
                     <td>Italy</td>
-                    <td>
-                        <ul class = allergy>
-                            <li>gluten</li>
-                            <li>Wheat</li>
-                        </ul>
-                    </td>
                     
                 </tr>
                 <tr>
+                    <td><input type="checkbox" name="record"></td>
                     <td>Sushi</td>
                     <td><img src="https://upload.wikimedia.org/wikipedia/commons/5/55/Large_plate_of_sushis_-_panoramio.jpg" alt="Sushi"></td>
                     <td>01.06.2021</td>
                     <td>1 kg</td>
-                    <td><ol>
-                        <li>Sashimi salmon</li>
-                        <li>Sashimi tuna</li>
-                        <li>Nigiri Salmon</li>
-                        <li>nigiri tuna</li>
-                        <li>California roll</li>
-                        <li>Ebi roll</li>
-                        <li>spicy tuna roll</li>
-                    </ol></td>
                     <td>Japan</td>
-                    <td>
-                        <ul class="allergy">
-                            <li>seafood</li>
-                            <li>Seaweed</li>
-                            <li>gluten</li>
-                        </ul>
-                    </td>
                 </tr>
             </table>
+            <button type="button" class="delete-row">Delete Row</button>
         </section><br><br>
-        <p class= "firstpar">Lorem ipsum dolor sit amet, consectetur adipiscing elit.<br>
-         Venit ad extremum; Oratio me istius philosophi non offendit;<br>
-        Res enim concurrent contrariae. Duo Reges: constructio interrete.<br>
-        Solum praeterea formosum, solum liberum, solum civem,
-        stultost; Comprehensum, quod cognitum non habet?
-        </p>
-        <article><h5>second paragraph</h5></article>
-        <p class = "secondpar">Igitur neque stultorum quisquam beatus neque sapientium non beatus. <br>
-        Quis est tam dissimile homini. Equidem e Cn. Nam quid possumus facere melius?</p><br>
-        </article>
-        <ul class="secondli">
-            this list shows style image:
-            <li>Lorem ipsum</li>
-            <li>Lorem ipsum</li>
-        </ul>
-        <ul class="thirdli">
-            this list shows style:
-            <li>Lorem ipsum</li>
-            <li>Lorem ipsum</li>
-        </ul>
-<figure><table>
-        <tr>
-            <th>Lorem Ipsum</th>
-            <th>Lorem Ipsum</th>
-            <th>Lorem Ipsum</th>
-            <th>Lorem Ipsum</th>
-            </tr>
-        <tr>
-            <td>Istic sum, inquit. Consequens enim est et post oritur, ut dixi.</td>
-            <td>Istic sum, inquit. Consequens enim est et post oritur, ut dixi.</td>
-            <td>Istic sum, inquit. Consequens enim est et post oritur, ut dixi.</td>
-            <td>Istic sum, inquit. Consequens enim est et post oritur, ut dixi.</td>
-        </tr>
-        <tr>
-            <td>Istic sum, inquit. Consequens enim est et post oritur, ut dixi.</td>
-            <td>Istic sum, inquit. Consequens enim est et post oritur, ut dixi.</td>
-            <td>Istic sum, inquit. Consequens enim est et post oritur, ut dixi.</td>
-            <td>Istic sum, inquit. Consequens enim est et post oritur, ut dixi.</td>
-        </tr>
-        
-    </table><figcaption>table for assignment2</figcaption>
-</figure>
 
 <footer><pre>Assignment1| Group 47 | Alina saddiqui | Emily Zwueste | Web Technology | X_400488</pre></footer>
       
