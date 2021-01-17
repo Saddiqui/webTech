@@ -9,7 +9,7 @@ function sortTable(n) {
       shouldSwitch,
       dir,
       switchcount = 0;
-    table = document.getElementById("bestsellers");
+    table = document.getElementById("bestsellersProducts");
     switching = true;
     //Set the sorting direction to ascending:
     dir = "asc";
@@ -61,33 +61,49 @@ function sortTable(n) {
       }
     }
   }
+
+// Create Dynamic Table 
+function LoadProducts(){
+  $('#productsTableBody').empty();
+
+  $.getJSON("https://wt.ops.labs.vu.nl/api21/807c5ce9", function(data){
+    $(data).each(function(i, item){
+      $('#productsTableBody').append($("<tr>")
+    //   .append($("<td>").append(item.select))
+      .append($("<td>").append(item.product))
+      .append($("<td>").append('<img src="' + decodeURIComponent(item.image) + '" />'))
+      .append($("<td>").append(item.best_before_date))
+      .append($("<td>").append(decodeURIComponent(item.amount)))
+      .append($("<td>").append(item.origin)));
+    });
+  });
+}
+  
   
 //Reset Button Function
 $(document).ready(function() { 
-    $("button").click(function() { 
-        $.get("https://wt.ops.labs.vu.nl/api21/807c5ce9/reset" );
-            $("#button")[-1].reset() 
-    }); 
-}); 
+  LoadProducts();
 
-//Create Dynamic Table 
-$(document).ready(function(){
-    $(".add-row").click(function(){
-        var product = $("#product").val();
-        var image = $("#image").val();
-        var bestbefore = $("#bestbefore").val();
-        var amount = $("#amount").val();
-        var origin = $("#origin").val();
-        var markup = "<tr><td><input type='checkbox' product='record'></td><td>" + product + "</td><td>" + image + "</td><td>" + bestbefore + "</td><td>" + amount + "</td><td>" + origin + "</td></tr>";
-        $("table tbody").append(markup);
-    });
+	$('#resetButton').click(function(){
+    $.get("https://wt.ops.labs.vu.nl/api21/807c5ce9/reset");
+    LoadProducts();
+	}); 
+
+  /*Implementing Submit button to add items*/
+  $('#addProductForm').on("submit", function(e){
+    e.preventDefault(); // Stop refresh of the page
     
-    // Find and remove selected table rows
-    $(".delete-row").click(function(){
-        $("table tbody").find('input[name="record"]').each(function(){
-            if($(this).is(":checked")){
-                $(this).parents("tr").remove();
-            }
-        });
+    var productString = '{"' + $(this).serialize().replace(/=/g, '":"').replace(/&/g, '","') + '"}';
+
+    $.ajax({
+      type: "POST",
+      url: "https://wt.ops.labs.vu.nl/api21/807c5ce9",
+      contentType: "application/json",
+      data: productString,
+      success: function(){
+        $("#product, #image, #best_before_date, #amount, #origin").val("");
+        LoadProducts();
+      }
     });
-});   
+  });
+});

@@ -41,24 +41,9 @@
             <a href="#unlink" id="unlink" class="unlink">unvisited link</a>
             <a href="#vislink" id="vislink" class="vislink">visited link</a>
             <br><br>
-    <form id="login" action="https://wt.ops.labs.vu.nl/api21/807c5ce9/" method="POST">
-        <strong>Add new products here!</strong><br>
-        <label for="Product"><em>Product:</em></label><br>
-        <input type="text" id="product" name="product" required><br>
-            <label for="origin"><em>Origin:</em></label><br>
-            <input type="text" id="origin" name="origin" required><br>
-                <label for="best_before_date"><em>Best before date:</em></label><br>
-                <input type="text" id="best_before_date" name="best_before_date" required><br>
-                    <label for="amount"><em>Amount:</em></label><br>
-                    <input type="text" id="amount" name="amount" required><br>
-                        <label for="image"><em>Image:</em></label><br>
-                        <input type="text" id="image" name="image"><br>
-                        <input type="text" id="type" name="type"><br>
-                        <input type="submit" value="Submit">
-                        <button>Reset button</button>
-                        
-    </form>
+    
 
+    <input id="resetButton" type="button" value="Reset" />
 
             <section class="main">
                 <dl class="data_table">
@@ -74,16 +59,9 @@
                 </dl>
                 </section>
         <section>
-            <table id="bestsellers"> 
+            <table id="bestsellersProducts"> 
                 <caption>Our best selling products in details:</caption>
-                <input type = "text" id="product" placeholder="product">
-                <input type = "text" id="image" placeholder="image">
-                <input type = "text" id="bestbefore" placeholder="best before">
-                <input type = "text" id="amount" placeholder="amount">
-                <input type = "text" id="origin" placeholder="origin">
-                <input type="button" class="add-row" value="Add Row">
                 <tr>
-                    <th>Select</th>
                     <th class="sort"onclick="sortTable(0)">Product</th>
                     <th>Image</th>
                     <th>Best Before </th>
@@ -91,7 +69,6 @@
                     <th class ="sort" onclick="sortTable(1)">Origin</th>
                 </tr>
                 <tr>
-                    <td><input type="checkbox" name="record"></td>
                     <td>Chocolate </td>
                     <td><img src="https://upload.wikimedia.org/wikipedia/commons/7/70/Chocolate_%28blue_background%29.jpg" alt="Chocolate"></td>
                     <td>01.06.2021</td>
@@ -100,7 +77,6 @@
                     
                 </tr>
                 <tr>
-                    <td><input type="checkbox" name="record"></td>
                     <td>Pasta</td>
                     <td><img src="https://upload.wikimedia.org/wikipedia/commons/1/1c/Pasta2.jpg" alt="Pasta"></td>
                     <td>01.06.2021</td>
@@ -109,7 +85,6 @@
                     
                 </tr>
                 <tr>
-                    <td><input type="checkbox" name="record"></td>
                     <td>Sushi</td>
                     <td><img src="https://upload.wikimedia.org/wikipedia/commons/5/55/Large_plate_of_sushis_-_panoramio.jpg" alt="Sushi"></td>
                     <td>01.06.2021</td>
@@ -117,9 +92,35 @@
                     <td>Japan</td>
                 </tr>
             </table>
-            <button type="button" class="delete-row">Delete Row</button>
         </section><br><br>
+        <table id=productsTable>
+            <thead>
+            <tr>
+                <th>Product</th>
+                <th>Image</th>
+                <th>Best Before </th>
+                <th>Amount</th>
+                <th>Origin</th>
+            </tr>
+            <tr>
+                <form id="addProductForm" action="" method="POST">
+                    <td><input id="product" type="text" name="product" required /></td> 
+                    <td><input id="image"  type="text" name="image" /></td> 
+                    <td><input id="best_before_date" type="date"  name="best_before_date" required /></td>
+                    <td><input id="amount" type="text" name="amount" required /></td> 
+                    <td>
+                        <input type="text" id="origin" name="origin" required />
+                        <input type="submit" value="Send">
+                    </td>   
+                </form>   
+            </tr>  
+            </thead>
+            <tbody id="productsTableBody">
+            </tbody>
+        </table> 
+
+
 
 <footer><pre>Assignment1| Group 47 | Alina saddiqui | Emily Zwueste | Web Technology | X_400488</pre></footer>
-      
+  </body>    
 </html>
