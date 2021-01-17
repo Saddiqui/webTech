@@ -9,7 +9,7 @@ function sortTable(n) {
       shouldSwitch,
       dir,
       switchcount = 0;
-    table = document.getElementById("bestsellers");
+    table = document.getElementById("bestsellersProducts");
     switching = true;
     //Set the sorting direction to ascending:
     dir = "asc";
@@ -61,52 +61,57 @@ function sortTable(n) {
       }
     }
   }
+
+$(function() {  //the fallback function for the datepicker, this allows the datepicker to work across all browsers including safari
+  if (!Modernizr.inputtypes['date']) {
+    $('input[type=date]').datepicker({ 
+            dateFormat: 'mm-dd-yy'
+        });
+    }
+});  
+
+// Create Dynamic Table 
+function LoadProducts(){
+  $('#productsTableBody').empty();
+
+  $.getJSON("https://wt.ops.labs.vu.nl/api21/807c5ce9", function(data){
+    $(data).each(function(i, item){
+      $('#productsTableBody').append($("<tr>")
+    //   .append($("<td>").append(item.select))
+      .append($("<td>").append(item.product))
+      .append($("<td>").append('<img src="' + decodeURIComponent(item.image) + '" />'))
+      .append($("<td>").append(item.best_before_date))
+      .append($("<td>").append(decodeURIComponent(item.amount)))
+      .append($("<td>").append(item.origin)));
+    });
+  });
+}
+  
   
 //Reset Button Function
 $(document).ready(function() { 
-    $("button").click(function() { 
-        $.get("https://wt.ops.labs.vu.nl/api21/807c5ce9/reset" );
-            $("#button")[-1].reset() 
-    }); 
-}); 
+  LoadProducts();
 
-//Create Dynamic Table 
-<script type="text/javascript">
-    function GenerateTable() {
-        //Build an array containing Customer records.
-        var customers = new Array();
-        customers.push(["Customer Id", "Name", "Country"]);
-        customers.push([1, "John Hammond", "United States"]);
-        customers.push([2, "Mudassar Khan", "India"]);
-        customers.push([3, "Suzanne Mathews", "France"]);
-        customers.push([4, "Robert Schidner", "Russia"]);
- 
-        //Create a HTML Table element.
-        var table = document.createElement("TABLE");
-        table.border = "1";
- 
-        //Get the count of columns.
-        var columnCount = customers[0].length;
- 
-        //Add the header row.
-        var row = table.insertRow(-1);
-        for (var i = 0; i < columnCount; i++) {
-            var headerCell = document.createElement("TH");
-            headerCell.innerHTML = customers[0][i];
-            row.appendChild(headerCell);
-        }
- 
-        //Add the data rows.
-        for (var i = 1; i < customers.length; i++) {
-            row = table.insertRow(-1);
-            for (var j = 0; j < columnCount; j++) {
-                var cell = row.insertCell(-1);
-                cell.innerHTML = customers[i][j];
-            }
-        }
- 
-        var dvTable = document.getElementById("dvTable");
-        dvTable.innerHTML = "";
-        dvTable.appendChild(table);
-    }
-</script>
+	$('#resetButton').click(function(){
+    $.get("https://wt.ops.labs.vu.nl/api21/807c5ce9/reset");
+    LoadProducts();
+	}); 
+
+  /*Implementing Submit button to add items*/
+  $('#addProductForm').on("submit", function(e){
+    e.preventDefault(); // Stop refresh of the page
+    
+    var productString = '{"' + $(this).serialize().replace(/=/g, '":"').replace(/&/g, '","') + '"}';
+
+    $.ajax({
+      type: "POST",
+      url: "https://wt.ops.labs.vu.nl/api21/807c5ce9",
+      contentType: "application/json",
+      data: productString,
+      success: function(){
+        $("#product, #image, #best_before_date, #amount, #origin").val("");
+        LoadProducts();
+      }
+    });
+  });
+});
