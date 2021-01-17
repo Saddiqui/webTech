@@ -62,6 +62,14 @@ function sortTable(n) {
     }
   }
 
+$(function() {  //the fallback function for the datepicker, this allows the datepicker to work across all browsers including safari
+  if (!Modernizr.inputtypes['date']) {
+    $('input[type=date]').datepicker({ 
+            dateFormat: 'mm-dd-yy'
+        });
+    }
+});  
+
 // Create Dynamic Table 
 function LoadProducts(){
   $('#productsTableBody').empty();
