@@ -47,11 +47,6 @@ header {
   content: '';
   display: block;
 }
-@media (max-width: 600px){
-  .data_table {
-      text-align: center;
-  }
-}
 
 header.h1 {
 font-size:20px;
@@ -176,20 +171,6 @@ p.secondpar{
   font-variant: small-caps;
 }
 
-/* Responsive layout - when the screen is less than 700px wide, make the two columns stack on top of each other instead of next to each other */
-@media screen and (max-width: 700px) {
-  .row {   
-    flex-direction: column;
-  }
-}
-
-/* Responsive layout - when the screen is less than 400px wide, make the navigation links stack on top of each other instead of next to each other */
-@media screen and (max-width: 400px) {
-  .navbar a {
-    float: none;
-    width: 100%;
-  }
-}
 footer {
   page-break-after: always;
   bottom: 0;
@@ -204,7 +185,7 @@ footer {
 img {
   border: 1px solid #ddd;
   border-radius: 4px;
-  width: 75px;
+  width: 100%;
 }
 
 form{
@@ -242,4 +223,31 @@ article{
 
 #buttons{
   text-align: center;
+}
+
+/* Responsive layout - when the screen is less than 700px wide, make the two columns stack on top of each other instead of next to each other */
+@media screen and (max-width: 800px) {
+  .row {   
+    flex-direction: column;
+  }
+}
+
+/* Responsive layout - when the screen is less than 400px wide, make the navigation links stack on top of each other instead of next to each other */
+@media screen and (max-width: 800px) {
+  .navbar a {
+    float: none;
+  }
+}
+
+@media (max-width: 600px){
+  .data_table {
+      text-align: center;
+  }
+}
+
+@media screen and (max-width:800px) {
+  .left, .main, .right {
+    display: center;
+    width:100%; /* The width is 100%, when the viewport is 800px or smaller */
+  }
 }
